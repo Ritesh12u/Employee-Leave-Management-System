@@ -1,0 +1,307 @@
+{
+  "info": {
+    "_postman_id": "d1d8cc94-ef09-4d13-a97f-f967db58c2db",
+    "name": "elm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25345825"
+  },
+  "item": [
+    {
+      "name": "log in",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"ritesh@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sign up",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"ritesh@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/signup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "employees",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyaXRlc2hAZ21haWwuY29tIiwiaWF0IjoxNzcwMjkxOTQzLCJleHAiOjE3NzAzNzgzNDN9.CnQ1ul3Bv8d2ogkwZyRf8BaA1jES3sgPpHZj_OiyyGmj3f4bfSolafIp1D_E8NTT_1OKK7j4QRid5oZ8-gItYQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employee",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employee"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "employees role update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcnVuQGdtYWlsLmNvbSIsImlhdCI6MTc3MDI4ODc3MiwiZXhwIjoxNzcwMzc1MTcyfQ.4onZX_khng-tUpXVyTRMbvJvrF6gyqezRdFPU7tqpTc9b4f4gqpcc4LHux-Av8yoBjIWc3qRTdVA2xownw59Lg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 3,\r\n    \"role\": \"ADMIN\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employee/promote",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employee",
+            "promote"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "apply leaves",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcnVuQGdtYWlsLmNvbSIsImlhdCI6MTc3MDI5MjA3NCwiZXhwIjoxNzcwMzc4NDc0fQ.RGjjy3qN6t_mwRMn2wnXkayOQTMOgyDIFvU5HNF-PY44xb-n8ds7CtJ5wsNX3DAnNjNMUqZKguP9ATESi6ZGzg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcnVuQGdtYWlsLmNvbSIsImlhdCI6MTc3MDI5MTM4MSwiZXhwIjoxNzcwMzc3NzgxfQ.kCwoQoM75Tl0_GA8Bd_CT9rZ633-v_bpPj9mlnXquYHc8FuWkXr45DvWDzRaEbX4VAmDwe6qZsjCmUtTNMqkOA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"startDate\": \"2026-02-12\",\r\n    \"endDate\": \"2026-02-13\",\r\n    \"reason\": \"business leave\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/leaves/apply",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "leaves",
+            "apply"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "approve leave request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzbmVoYUBnbWFpbC5jb20iLCJpYXQiOjE3NzAyOTIxODIsImV4cCI6MTc3MDM3ODU4Mn0.RaXn3IqMFyo2ruZT5RIIMfEnUz4_i-ZysMXCQ5tCu07Tu4t5UcO4K_dJr0btlQW75YXwCAz7msXENbVj0iYfBQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ4eXoiLCJpYXQiOjE3NzAyNzI3NDUsImV4cCI6MTc3MDM1OTE0NX0.tve2KT_Dds-M2JB1BQ10Mk5Rk-e1gvsjIf446dqokwccIQf_zeGkPLN7jep6CrfDdmfuOmpbpkFqvcHm4LGlDA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/restrict/approve/10?action=APPROVED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restrict",
+            "approve",
+            "10"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "APPROVED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "check all leaves",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzbmVoYUBnbWFpbC5jb20iLCJpYXQiOjE3NzAyOTIxODIsImV4cCI6MTc3MDM3ODU4Mn0.RaXn3IqMFyo2ruZT5RIIMfEnUz4_i-ZysMXCQ5tCu07Tu4t5UcO4K_dJr0btlQW75YXwCAz7msXENbVj0iYfBQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ4eXoyIiwiaWF0IjoxNzcwMjcxNjUyLCJleHAiOjE3NzAzNTgwNTJ9.qXQ3maW_qxn-RRD_MrVToM7ofy79fbPjEm_DeDz0JCdZxMfs7oXslBZD1D5FNybtHGphHBsuyl0ju3Ma1rz1mg",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/restrict/apply-list",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restrict",
+            "apply-list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "my leaves",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyaXRlc2hAZ21haWwuY29tIiwiaWF0IjoxNzcwMjkyMjYzLCJleHAiOjE3NzAzNzg2NjN9.3MzT7tiqn11ONMW_JkKWoK-O2FlKFJQCsYjzwRG0B1rtG4RF0lBkYyH2EpeZD_GHn2ayMym50yzdLs6m9DUMhQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/leaves/my",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "leaves",
+            "my"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
